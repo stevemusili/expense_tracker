@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
 </head>
+
 <body>
     <header class="header">
         <h1>Expense Tracker</h1>
@@ -27,6 +29,44 @@
                 </select>
             </label>
         </section>
+
+        <div id="status" role="status" aria-live="polite">
+            Loading exchange rates...
+        </div>
+
+        <section class="add-expense">
+            <h2>Add New Expense</h2>
+            <form id="expense-form">
+                <label for="description" class="form-label">
+                    Description
+                    <input type="text" id="description" placeholder="e.g. Lunch at KFC">
+                </label>
+                <label for="amount" class="form-label">
+                    Amount
+                    <input type="number" id="amount" placeholder="10.50" min="0.01" step="0.01">
+                </label>
+                <label for="currency" class="form-label">
+                    Currency
+                    <select name="currency" id="expense-currency" required>
+                        <option value="USD">USD</option>
+                        <option value="KES">KES</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                    </select>
+                </label>
+                <label for="category" class="form-label">
+                    Category
+                    <select name="category" id="category" required>
+                        <option value="Food">Food</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Shoppig">Shopping</option>
+                        <option value="Entertainment">Entertainment</option>
+                    </select>
+                </label>
+                <button class="submit-button" type="submit">Add Expense</button>
+            </form>
+        </section>
     </main>
 </body>
+
 </html>
